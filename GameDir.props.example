@@ -1,0 +1,7 @@
+<Project>
+	<PropertyGroup>
+		<!-- Copy this file to GameDir.props and set the path to your game folder.
+		     The game must have BepInEx installed and launched at least once (to generate BepInEx\interop). -->
+		<GameDir>C:\Games\NIGHT-RUNNERS</GameDir>
+	</PropertyGroup>
+</Project>

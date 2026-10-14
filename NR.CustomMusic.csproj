@@ -1,0 +1,53 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+	<!-- Локальный путь к игре лежит в GameDir.props (не попадает в git).
+	     Пример содержимого — в GameDir.props.example. -->
+	<Import Project="GameDir.props" Condition="Exists('GameDir.props')" />
+
+	<PropertyGroup>
+		<TargetFramework>net6.0</TargetFramework>
+		<AssemblyName>NR.CustomMusic</AssemblyName>
+		<RootNamespace>NR.CustomMusic</RootNamespace>
+		<Version>1.0.0</Version>
+		<Nullable>disable</Nullable>
+		<ImplicitUsings>disable</ImplicitUsings>
+		<LangVersion>latest</LangVersion>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<GenerateDocumentationFile>false</GenerateDocumentationFile>
+		<AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+
+		<Interop>$(GameDir)\BepInEx\interop</Interop>
+		<Core>$(GameDir)\BepInEx\core</Core>
+	</PropertyGroup>
+
+	<Target Name="CheckGameDir" BeforeTargets="ResolveAssemblyReferences">
+		<Error Condition="'$(GameDir)' == '' Or !Exists('$(Interop)\Assembly-CSharp.dll')"
+		       Text="Укажи путь к игре с BepInEx (запущенной хотя бы раз): создай GameDir.props по примеру GameDir.props.example или передай -p:GameDir=..." />
+	</Target>
+
+	<ItemGroup>
+		<Reference Include="$(Core)\BepInEx.Core.dll" Private="false" />
+		<Reference Include="$(Core)\BepInEx.Unity.IL2CPP.dll" Private="false" />
+		<Reference Include="$(Core)\Il2CppInterop.Runtime.dll" Private="false" />
+		<Reference Include="$(Core)\Il2CppInterop.Common.dll" Private="false" />
+
+		<Reference Include="$(Interop)\Il2Cppmscorlib.dll" Private="false" />
+		<Reference Include="$(Interop)\Il2CppSystem.dll" Private="false" />
+		<Reference Include="$(Interop)\UnityEngine.CoreModule.dll" Private="false" />
+		<Reference Include="$(Interop)\UnityEngine.AudioModule.dll" Private="false" />
+		<Reference Include="$(Interop)\UnityEngine.UnityWebRequestModule.dll" Private="false" />
+		<Reference Include="$(Interop)\UnityEngine.UnityWebRequestAudioModule.dll" Private="false" />
+		<Reference Include="$(Interop)\Unity.ResourceManager.dll" Private="false" />
+		<Reference Include="$(Interop)\Unity.Addressables.dll" Private="false" />
+		<Reference Include="$(Interop)\UniTask.dll" Private="false" />
+		<Reference Include="$(Interop)\Assembly-CSharp.dll" Private="false" />
+	</ItemGroup>
+
+	<!-- dotnet build -p:GameDir=путь_к_игре  — собрать под другую версию игры
+	     dotnet build -p:SkipCopy=true          — только проверить сборку, не копировать в игру -->
+	<Target Name="CopyToGame" AfterTargets="Build" Condition="'$(SkipCopy)' != 'true'">
+		<MakeDir Directories="$(GameDir)\BepInEx\plugins\NR.CustomMusic" />
+		<Copy SourceFiles="$(TargetPath)" DestinationFolder="$(GameDir)\BepInEx\plugins\NR.CustomMusic" />
+	</Target>
+
+</Project>
