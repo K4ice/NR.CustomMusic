@@ -4,3 +4,4 @@ dist/
 .vs/
 *.user
 GameDir.props
+NEXUS_DESCRIPTION.txt
