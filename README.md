@@ -5,6 +5,8 @@ Drop `.mp3` / `.ogg` / `.wav` files into a folder — they play in the garage, o
 
 > **Game version:** 3.1.9, 3.1.11 (Private Alpha) · **Loader:** BepInEx 6 IL2CPP (be.788+)
 
+🎵 **Want to pick tracks by hand?** Get [Phone Track Picker](https://github.com/K4ice/NR.PhoneTrackPicker) — a track list on the in-game phone that includes your custom music.
+
 [Русская версия ниже](#русский)
 
 ---
@@ -88,6 +90,8 @@ Each file is loaded into a Unity `AudioClip` and registered as a regular `MusicT
 Мод добавляет твою музыку во встроенный плеер **NIGHT-RUNNERS**. Кидаешь `.mp3` / `.ogg` / `.wav` в папку — треки играют в гараже, на улицах, на митспотах и в гонках вместе с родным саундтреком, с переходами и всплывающим *Now Playing*.
 
 > **Версия игры:** 3.1.9, 3.1.11 · **Загрузчик:** BepInEx 6 IL2CPP (be.788+)
+
+🎵 **Хочешь выбирать треки вручную?** Поставь [Phone Track Picker](https://github.com/K4ice/NR.PhoneTrackPicker): список треков прямо на телефоне в игре, твоя музыка в нём тоже есть.
 
 ### Установка
 
