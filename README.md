@@ -3,7 +3,7 @@
 Add your own music to the in-game music player of **NIGHT-RUNNERS**.
 Drop `.mp3` / `.ogg` / `.wav` files into a folder — they play in the garage, on the streets, at meetspots and in races, right alongside the original soundtrack, with the usual crossfades and the *Now Playing* popup.
 
-> **Game version:** 3.1.9 (Private Alpha) · **Loader:** BepInEx 6 IL2CPP (be.788+)
+> **Game version:** 3.1.9, 3.1.11 (Private Alpha) · **Loader:** BepInEx 6 IL2CPP (be.788+)
 
 [Русская версия ниже](#русский)
 
@@ -87,7 +87,7 @@ Each file is loaded into a Unity `AudioClip` and registered as a regular `MusicT
 
 Мод добавляет твою музыку во встроенный плеер **NIGHT-RUNNERS**. Кидаешь `.mp3` / `.ogg` / `.wav` в папку — треки играют в гараже, на улицах, на митспотах и в гонках вместе с родным саундтреком, с переходами и всплывающим *Now Playing*.
 
-> **Версия игры:** 3.1.9 · **Загрузчик:** BepInEx 6 IL2CPP (be.788+)
+> **Версия игры:** 3.1.9, 3.1.11 · **Загрузчик:** BepInEx 6 IL2CPP (be.788+)
 
 ### Установка
 
