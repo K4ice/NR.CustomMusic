@@ -1,4 +1,3 @@
-![Game Version](https://shields.io)
 # Custom Music for NIGHT-RUNNERS
 
 Add your own music to the in-game music player of **NIGHT-RUNNERS**.
